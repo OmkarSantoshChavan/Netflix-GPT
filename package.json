@@ -35,5 +35,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ajv": "^6.12.6",
+    "ajv-keywords": "^3.5.2",
+    "autoprefixer": "^9.8.8",
+    "patch-package": "^8.0.0",
+    "postcss": "^7.0.39",
+    "react-router-dom": "^7.9.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+  },
+  "resolutions": {
+    "postcss": "7.0.39"
   }
 }

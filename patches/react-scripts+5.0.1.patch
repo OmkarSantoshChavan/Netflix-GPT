@@ -1,0 +1,50 @@
+diff --git a/node_modules/react-scripts/config/webpack.config.js b/node_modules/react-scripts/config/webpack.config.js
+index e465d8e..fdcacb1 100644
+--- a/node_modules/react-scripts/config/webpack.config.js
++++ b/node_modules/react-scripts/config/webpack.config.js
+@@ -141,36 +141,15 @@ module.exports = function (webpackEnv) {
+             // https://github.com/facebook/create-react-app/issues/2677
+             ident: 'postcss',
+             config: false,
+-            plugins: !useTailwind
+-              ? [
+-                  'postcss-flexbugs-fixes',
+-                  [
+-                    'postcss-preset-env',
+-                    {
+-                      autoprefixer: {
+-                        flexbox: 'no-2009',
+-                      },
+-                      stage: 3,
+-                    },
+-                  ],
+-                  // Adds PostCSS Normalize as the reset css with default options,
+-                  // so that it honors browserslist config in package.json
+-                  // which in turn let's users customize the target behavior as per their needs.
+-                  'postcss-normalize',
+-                ]
+-              : [
+-                  'tailwindcss',
+-                  'postcss-flexbugs-fixes',
+-                  [
+-                    'postcss-preset-env',
+-                    {
+-                      autoprefixer: {
+-                        flexbox: 'no-2009',
+-                      },
+-                      stage: 3,
+-                    },
+-                  ],
+-                ],
++            plugins: !useTailwind ? [
++                        'postcss-flexbugs-fixes',
++                        ['postcss-preset-env', { autoprefixer: { flexbox: 'no-2009' }, stage: 3 }],
++                        'postcss-normalize',
++                      ]
++                    : [
++                        'tailwindcss',
++                        'autoprefixer'
++                      ],
+           },
+           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+         },
